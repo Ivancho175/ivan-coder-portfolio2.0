@@ -1,0 +1,51 @@
+<section class="project-card">
+  <figure class="project-card_image">
+    <img [src]="project.image_url" [alt]="project.image_alt" />
+  </figure>
+  <article class="project-card_content">
+    <h3 class="project-card_content_title">{{ project.name }}</h3>
+    <div class="project-card_content_tech-grid">
+      <div
+        class="project-card_content_tech-grid_chip"
+        [ngStyle]="{ 'background-color': tech.color }"
+        *ngFor="let tech of project.techs"
+      >
+        <p class="project-card_content_tech-grid_chip_name">
+          <i [class]="tech.icon_class"></i>{{ tech.name }}
+        </p>
+      </div>
+    </div>
+    <p class="project-card_content_description">
+      {{
+        project.description.split(" ").join("").length > 60
+          ? (project.description | slice : 0 : 60) + "..."
+          : project.description
+      }}
+    </p>
+    <ul class="project-card_content_links">
+      <a
+        [href]="project.repo_url"
+        class="project-card_content_links_item"
+        target="_blank"
+      >
+        <i class="fab fa-github"></i><span>Repo</span>
+      </a>
+      <a
+        [href]="project.pack_url"
+        target="_blank"
+        class="project-card_content_links_item"
+        *ngIf="project.pack_url"
+      >
+        <i class="fab fa-npm"></i><span>Package</span>
+      </a>
+      <a
+        [href]="project.site_url"
+        target="_blank"
+        class="project-card_content_links_item"
+        *ngIf="project.site_url"
+      >
+        <i class="far fa-window-maximize"></i><span>Live</span>
+      </a>
+    </ul>
+  </article>
+</section>

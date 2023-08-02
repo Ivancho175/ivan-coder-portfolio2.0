@@ -1,0 +1,55 @@
+<section class="home">
+  <section class="hero" id="hero">
+    <div class="hero_content">
+      <!-- <article class="hero_content_text">
+      </article> -->
+      <h2 class="hero_content_text_title">
+        Hello, I am <strong>Ivan Velez</strong>
+      </h2>
+      <p class="hero_content_text_sub-title">{{ data.hero.career }}</p>
+      <figure class="hero_content_image">
+        <img [src]="data.hero.img_src" [alt]="data.hero.img_alt" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services_content">
+      <article class="services_content_text">
+        <h2 class="services_content_text_title">What I do</h2>
+      </article>
+
+      <div class="services_content_grid">
+        <article
+          class="services_content_grid_item"
+          *ngFor="let service of data.services"
+        >
+          <h2 class="services_content_grid_item_title">{{ service.name }}</h2>
+          <p class="services_content_grid_item_description">
+            {{ service.description }}
+          </p>
+        </article>
+      </div>
+
+      <button type="button" (click)="goToMyWork()">My work</button>
+    </div>
+  </section>
+
+  <section class="my-work" id="myWork">
+    <div class="my-work_content">
+      <article class="my-work_content_text">
+        <h2 class="my-work_content_text_title">My work</h2>
+        <p class="my-work_content_text_description">
+          A selection of my range of work
+        </p>
+      </article>
+
+      <div class="my-work_content_projects-container">
+        <project-card
+          *ngFor="let project of data.projects"
+          [project]="project"
+        ></project-card>
+      </div>
+    </div>
+  </section>
+</section>

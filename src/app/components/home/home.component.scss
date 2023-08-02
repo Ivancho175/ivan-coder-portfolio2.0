@@ -1,0 +1,206 @@
+@import "./../../../scss/settings";
+
+.home {
+  .hero {
+    padding: 5rem 2rem;
+    width: 100%;
+    &_content {
+      @include flex(flex-start, flex-start, column, 0.5rem);
+
+      &_text_title,
+      &_text_sub-title {
+        width: 100%;
+      }
+
+      &_text_title {
+        font-size: 3rem;
+        font-weight: var(--fw-light);
+        strong {
+          font-size: 4.3rem;
+          display: block;
+          font-family: var(--ff-logo);
+        }
+      }
+
+      &_text_sub-title {
+        position: relative;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: var(--fw-bold);
+        font-family: var(--ff-secondary);
+        color: var(--clr-white);
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          background-color: var(--clr-accent-400);
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          border-radius: 0.3rem;
+          z-index: -1;
+        }
+      }
+
+      &_image {
+        width: 100%;
+        img {
+          width: 100%;
+          box-shadow: var(--bs);
+        }
+      }
+
+      @media (min-width: 37.5rem) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 30.5rem;
+        margin: 0 auto;
+        &_image {
+          grid-column: 1 / 2;
+          grid-row: 1 / 3;
+        }
+
+        &_text_title,
+        &_text_sub-title {
+          text-align: right;
+        }
+        &_text_title {
+          place-self: center;
+          grid-column: 2 / 3;
+        }
+        &_text_sub-title {
+          align-self: start;
+          grid-column: -1 / 1;
+          grid-row: 2;
+          padding: 0.25em 1rem;
+          position: relative;
+          display: block;
+          left: -1.5em;
+          min-width: calc(100% + 1.5em);
+        }
+      }
+
+      @media (min-width: 50rem) {
+        max-width: 45.5rem;
+        &_text_title {
+          font-size: 4.5rem;
+          strong {
+            font-size: 6.4rem;
+          }
+        }
+        &_text_sub-title {
+          font-size: 2rem;
+          left: -0.5em;
+          min-width: calc(100% + 0.5em);
+        }
+      }
+    }
+  }
+
+  .services {
+    background-color: var(--clr-black);
+    background-image: url("/assets/images/programming_picture.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    color: var(--clr-white);
+    text-align: center;
+    &_content {
+      @include flex(center, center, column, 3rem);
+      padding: 5rem 2rem;
+      &_text {
+        h2 {
+          font-size: var(--fs-h2);
+          color: var(--clr-accent-400);
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 6rem;
+          height: 1px;
+          margin: 0.5em auto 1em;
+          background: var(--clr-white);
+          opacity: 0.3;
+          border-radius: 1px;
+          @media (min-width: 50rem) {
+            width: 10rem;
+          }
+        }
+      }
+
+      &_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        @media (min-width: 50rem) {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3rem;
+        }
+
+        &_item {
+          @include flex(center, center, column, 0.5rem);
+          max-width: 20rem;
+          @media (min-width: 69.375rem) {
+            &_title {
+              font-size: 28px;
+            }
+            &_description {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+      button {
+        padding: 0.5rem 4.5rem;
+        border-style: none;
+        border-radius: 0.3rem;
+        background-color: var(--clr-accent-400);
+        color: var(--clr-white);
+        font-family: var(--ff-primary);
+        font-weight: var(--fw-bold);
+        @media (min-width: 69.375rem) {
+          font-size: 18px;
+        }
+        &:hover {
+          background-color: var(--clr-accent-600);
+        }
+        &:active {
+          background-color: var(--clr-accent-800);
+        }
+      }
+    }
+  }
+
+  .my-work {
+    &_content {
+      @include flex(center, center, column, 3rem);
+      padding: 5rem 2rem;
+      &_text {
+        @include flex(center, center, column, 1rem);
+        &_title {
+          font-size: var(--fs-h2);
+        }
+        &_description {
+          font-weight: var(--fw-bold);
+          @media (min-width: 69.375rem) {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &_projects-container {
+        @include flex(center, flex-start, row, 1.5rem);
+        width: 100%;
+        flex-wrap: wrap;
+
+        project-card {
+          place-self: center;
+        }
+      }
+    }
+  }
+}

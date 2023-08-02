@@ -1,2 +1,84 @@
+<header class="header">
+  <section class="header_logo-section" style="display: flex">
+    <h3 class="logo-font">
+      Ivan<span style="color: var(--clr-accent-400)">Velez</span>
+    </h3>
+  </section>
+
+  <section class="header_navigation-container">
+    <div class="header_navigation-container_card">
+      <ul class="header_navigation-container_card_list">
+        <li class="header_navigation-container_card_list_item">
+          <p>Home</p>
+        </li>
+        <li class="header_navigation-container_card_list_item">
+          <p>What I Do</p>
+        </li>
+        <!-- <li class="header_navigation-container_card_list_item">
+          <p>About me</p>
+        </li> -->
+        <li class="header_navigation-container_card_list_item">
+          <p>My work</p>
+        </li>
+        <li class="header_navigation-container_card_list_item">
+          <p>Contact</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="header_action-icons">
+    <figure class="header_action-icons mode" (click)="toggleDarkMode()">
+      <span class="material-symbols-outlined" *ngIf="!darkMode; else lightBlock"
+        >dark_mode</span
+      >
+      <ng-template #lightBlock>
+        <span class="material-symbols-outlined">light_mode</span>
+      </ng-template>
+    </figure>
+
+    <figure class="header_action-icons menu" (click)="toggleMenu()">
+      <span class="material-symbols-outlined">menu</span>
+    </figure>
+  </div>
+</header>
 <router-outlet></router-outlet>
-<h1>Hola mundo</h1>
+<footer class="footer">
+  <a href="mailto:ivancho175@hotmail.com" class="footer__link"
+    >ivancho175@hotmail.com</a
+  >
+  <ul class="social-list">
+    <li class="social-list__item">
+      <a
+        href="https://github.com/Ivancho175"
+        class="social-list__link"
+        target="-blank"
+        ><i class="fab fa-github"></i> GitHub</a
+      >
+    </li>
+    <li class="social-list__item">
+      <a
+        href="https://twitter.com/ivancho175"
+        class="social-list__link"
+        target="-blank"
+        ><i class="fab fa-twitter"></i> Twitter</a
+      >
+    </li>
+    <li class="social-list__item">
+      <a
+        href="https://www.linkedin.com/in/ivancho175/"
+        class="social-list__link"
+        target="_blank"
+        ><i class="fab fa-linkedin"></i> LinkedIn</a
+      >
+    </li>
+    <li class="social-list__item">
+      <a
+        href="https://codepen.io/ivancho175/"
+        class="social-list__link"
+        target="_blank"
+        ><i class="fab fa-codepen"></i> CodePen</a
+      >
+    </li>
+  </ul>
+</footer>
