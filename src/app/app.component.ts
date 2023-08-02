@@ -10,6 +10,7 @@ let darkMode = localStorage.getItem('darkMode');
 export class AppComponent {
   title = 'portfolio2.0';
   public darkMode = false;
+  public openNavMenu = false;
 
   constructor() {
     if (darkMode === 'enabled') {
@@ -40,6 +41,6 @@ export class AppComponent {
   }
 
   public toggleMenu() {
-    console.log('toggleMenu');
+    this.openNavMenu = !this.openNavMenu;
   }
 }

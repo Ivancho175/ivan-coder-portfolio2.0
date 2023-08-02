@@ -154,7 +154,7 @@
         }
       }
 
-      button {
+      .button {
         padding: 0.5rem 4.5rem;
         border-style: none;
         border-radius: 0.3rem;
@@ -162,6 +162,7 @@
         color: var(--clr-white);
         font-family: var(--ff-primary);
         font-weight: var(--fw-bold);
+        text-decoration: none;
         @media (min-width: 69.375rem) {
           font-size: 18px;
         }

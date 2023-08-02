@@ -1,28 +1,41 @@
 <header class="header">
-  <section class="header_logo-section" style="display: flex">
+  <a href="/home#hero" class="header_logo-section" style="display: flex">
     <h3 class="logo-font">
       Ivan<span style="color: var(--clr-accent-400)">Velez</span>
     </h3>
-  </section>
+  </a>
 
-  <section class="header_navigation-container">
+  <section
+    class="header_navigation-container"
+    [class.active]="openNavMenu"
+    (click)="toggleMenu()"
+  >
     <div class="header_navigation-container_card">
       <ul class="header_navigation-container_card_list">
-        <li class="header_navigation-container_card_list_item">
+        <a href="/home#hero" class="header_navigation-container_card_list_item">
           <p>Home</p>
-        </li>
-        <li class="header_navigation-container_card_list_item">
+        </a>
+        <a
+          href="/home#services"
+          class="header_navigation-container_card_list_item"
+        >
           <p>What I Do</p>
-        </li>
-        <!-- <li class="header_navigation-container_card_list_item">
+        </a>
+        <!-- <a href="#" class="header_navigation-container_card_list_item">
           <p>About me</p>
-        </li> -->
-        <li class="header_navigation-container_card_list_item">
+        </a> -->
+        <a
+          href="/home#myWork"
+          class="header_navigation-container_card_list_item"
+        >
           <p>My work</p>
-        </li>
-        <li class="header_navigation-container_card_list_item">
+        </a>
+        <a
+          href="/home#footer"
+          class="header_navigation-container_card_list_item"
+        >
           <p>Contact</p>
-        </li>
+        </a>
       </ul>
     </div>
   </section>
@@ -43,9 +56,11 @@
   </div>
 </header>
 <router-outlet></router-outlet>
-<footer class="footer">
-  <a href="mailto:ivancho175@hotmail.com" class="footer__link"
-    >ivancho175@hotmail.com</a
+<footer class="footer" id="footer">
+  <a
+    href="mailto:ivancho175@gmail.com?Subject=Contacto%20hecho%20desde%20portafolio"
+    class="footer__link"
+    >ivancho175@gmail.com</a
   >
   <ul class="social-list">
     <li class="social-list__item">

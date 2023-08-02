@@ -38,7 +38,7 @@ export class CoreService {
       name: 'NX TodoList',
       description:
         'A simple fullstack application, using SCSS and MongoDB as NoSQL database',
-      techs: ['TC01', 'TC02', 'TC03'],
+      techs: ['TC01', 'TC02', 'TC03', 'TC04'],
       repo_url: 'https://github.com/Ivancho175/nx-todolist',
       site_url: 'https://spectacular-nougat-59feb3.netlify.app/dashboard',
     },
@@ -49,7 +49,7 @@ export class CoreService {
       name: 'Angular Responsive Datatable',
       description:
         'Responsive datatable. Easy implementation, beautiful and clean style, powerful search engine and pagination that can handle large data. It was created with Angular16, but it surely works on Angular 8+.',
-      techs: ['TC01', 'TC04'],
+      techs: ['TC01', 'TC05'],
       repo_url: 'https://github.com/Ivancho175/ngx-responsive-datatable-app',
       pack_url: 'https://www.npmjs.com/package/ngx-responsive-datatable',
     },
@@ -59,26 +59,32 @@ export class CoreService {
     {
       id: 'TC01',
       name: 'Angular',
-      icon_class: 'fab fa-angular',
-      color: '#dd0031',
+      badge_src:
+        'https://img.shields.io/badge/Library-Angular-informational?style=flat&logo=angular&logoColor=white&label&color=dd0031',
     },
     {
       id: 'TC02',
       name: 'NestJS',
-      icon_class: 'fab fa-node-js',
-      color: '#ea2845',
+      badge_src:
+        'https://img.shields.io/badge/Library-Nestjs-informational?style=flat&logo=nestjs&label&color=ED1543',
     },
     {
       id: 'TC03',
       name: 'NX',
-      icon_class: 'fab fa-node-js',
-      color: '#053247',
+      badge_src:
+        'https://img.shields.io/badge/Library-Nx-informational?style=flat&logo=nx&logoColor=%23ffffff&label&color=%23143055',
     },
     {
       id: 'TC04',
+      name: 'Mongo',
+      badge_src:
+        'https://img.shields.io/badge/Library-Mongo-informational?style=flat&logo=mongodb&logoColor=%23ffffff&label&color=%2347A248',
+    },
+    {
+      id: 'TC05',
       name: 'SASS',
-      icon_class: 'fab fa-sass',
-      color: '#bf4080',
+      badge_src:
+        'https://img.shields.io/badge/Library-Sass-informational?style=flat&logo=sass&logoColor=%23ffffff&label&color=%23CC6699',
     },
   ];
 

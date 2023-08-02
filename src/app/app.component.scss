@@ -13,32 +13,86 @@
   z-index: 1;
 
   &_logo-section {
+    text-decoration: none;
+    user-select: none;
     .logo-font {
       font-size: 30px;
       font-family: var(--ff-logo);
+    }
+    &:visited {
+      color: unset;
     }
   }
 
   &_navigation-container {
     display: none;
-    @media (min-width: 69.375rem) {
-      display: initial;
-    }
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000075;
+    backdrop-filter: blur(0.1rem);
     &_card {
+      margin: 3.3rem 2.5rem auto auto;
+      width: fit-content;
+      padding: 2rem 1rem 2rem 4rem;
+      background-color: var(--background);
+      color: var(--foreground);
+      border-radius: 0.3rem;
+      box-shadow: var(--bs);
       &_list {
-        @include flex(center, center, unset, 2rem);
-        color: var(--clr-white);
-        list-style: none;
+        @include flex(center, flex-end, column, 1rem);
         &_item {
-          padding: 0.3rem 1rem;
-          border-radius: 30px;
-          cursor: default;
+          text-decoration: none;
           user-select: none;
+          &:visited {
+            color: inherit;
+          }
           &:hover {
-            background-color: var(--clr-accent-600);
+            color: var(--clr-accent-600);
+            text-decoration: underline;
+            font-weight: var(--fw-bold);
           }
           &:active {
-            background-color: var(--clr-accent-800);
+            color: var(--clr-accent-800);
+          }
+        }
+      }
+    }
+
+    &.active {
+      display: initial;
+    }
+
+    @media (min-width: 50rem) {
+      position: initial;
+      display: initial;
+      width: initial;
+      background-color: transparent;
+      height: initial;
+      &_card {
+        margin: 0;
+        background-color: transparent;
+        padding: initial;
+        &_list {
+          @include flex(center, center, unset, 2rem);
+          color: var(--clr-white);
+          list-style: none;
+          &_item {
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            cursor: default;
+            user-select: none;
+            &:hover {
+              font-weight: var(--fw-regular);
+              text-decoration: none;
+              color: inherit;
+              background-color: var(--clr-accent-600);
+            }
+            &:active {
+              background-color: var(--clr-accent-800);
+            }
           }
         }
       }
@@ -62,7 +116,7 @@
         background-color: var(--clr-accent-800);
       }
       &.menu {
-        @media (min-width: 69.375rem) {
+        @media (min-width: 50rem) {
           display: none;
         }
       }
