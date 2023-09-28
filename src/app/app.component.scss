@@ -15,12 +15,13 @@
   &_logo-section {
     text-decoration: none;
     user-select: none;
+    color: var(--clr-white);
     .logo-font {
       font-size: 30px;
       font-family: var(--ff-logo);
     }
     &:visited {
-      color: unset;
+      color: var(--clr-white);
     }
   }
 
@@ -46,8 +47,9 @@
         &_item {
           text-decoration: none;
           user-select: none;
+          color: var(--clr-white);
           &:visited {
-            color: inherit;
+            color: var(--clr-white);
           }
           &:hover {
             color: var(--clr-accent-600);
